@@ -1,43 +1,37 @@
-#pattern
-#working on it
 import math
-n = int(input())
-rows = math.ceil(n / 4)
-mid = math.ceil(rows / 4) + 1
-temp=mid+1
+
+number = int(input())
+num = number / 2
+rows = math.ceil(num / 2)
+lines = rows * 2
+var = rows
 star = 2
-start = n - mid
-temp1=start
-begin = 1
-for i in range(0, rows):
-    print('\n')
-    cols = (temp * 2)
-    temp -= 1
+start1 = 1
+start2 = number - rows
+temp = start2
+end = number
+for i in range(rows):
+    temp = start2
+    lines = var * 2
+    var -= 1
     if i != 0:
-      for k in range(star + 1):
+        for k in range(star):
             print('*', end='')
             star += 2
-    for j in range(0, cols):
-        if j<temp+1:
-            print(begin, end='0')
-            begin += 1
+    for j in range(lines):
+        if j < lines / 2:
+            print(start1, end='0')
+            start1 += 1
         else:
-            if start<n:
-                print(start, end='0')
-                start += 1
+            if start2 < end-1:
+                start2 += 1
+                print(start2, end='0')
             else:
-                print(start, end='')
-    temp1 -= 2
-    start=temp1
-
-            
+                print(start2+1, end='')
+    end=temp
+    start2=temp-var
 
 
 
-
-
-       
-
-        
-
+    print('')
 
